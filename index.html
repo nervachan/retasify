@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retasify Launching Soon</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="fetch-email.js"></script>
 </head>
 <body class="bg-[#faf6ef] min-h-screen  items-center justify-center">
     <!-- Header -->
-    <header class="w-full bg-[#ededed] rounded-b-2xl px-2 sm:px-6 py-2 flex items-center justify-between shadow-sm ">
+    <header class="w-full bg-[#ededed] rounded-b-2xl px-2 sm:px-6 py-2 flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
         <!-- Logo Placeholder -->
-        <div class="flex items-center w-full">
+        <div class="flex items-center w-full" >
             <div class="w-12 h-12 flex items-center justify-center ml-12 sm:ml-0">
                 <img src="/retasify/images/logo.png" alt="Retasify Logo" class="w-16 h-16 object-contain">   
             </div>
             <!-- Navigation -->
             <nav class="hidden md:flex flex-1 justify-center space-x-10">
-                <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Home</a>
-                <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">About</a>
-                <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Renters</a>
-                <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Rentees</a>
+                <a href="#home" class="text-[#3d5636] font-medium text-sm hover:underline">Home</a>
+                <a href="#about" class="text-[#3d5636] font-medium text-sm hover:underline">About</a>
+                <a href="#renters" class="text-[#3d5636] font-medium text-sm hover:underline">Renters</a>
+                <a href="#rentees" class="text-[#3d5636] font-medium text-sm hover:underline">Rentees</a>
             </nav>
             <!-- Contact Button -->
             <div class="flex items-center ml-auto"> 
@@ -34,22 +35,21 @@
         </div>
     </header>
     <!-- Mobile Nav -->
-    <div id="mobile-menu" class="md:hidden hidden bg-[#ededed] px-4 py-3 rounded-b-xl shadow-sm">
+    <div id="mobile-menu" class="md:hidden hidden bg-[#ededed] px-4 py-3 rounded-b-xl shadow-sm  fixed top-16 left-0 w-full z-50">
         <nav class="flex flex-col space-y-2">
-            <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Home</a>
-            <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">About</a>
-            <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Renters</a>
-            <a href="#" class="text-[#3d5636] font-medium text-sm hover:underline">Rentees</a>
-            <a href="#" class="bg-[#eab543] hover:bg-[#d4a13a] text-[#3d5636] font-semibold text-sm px-4 py-2 rounded-md shadow transition w-max">Contact Us</a>
+            <a href="#home" class="text-[#3d5636] font-medium text-sm hover:underline">Home</a>
+            <a href="#about" class="text-[#3d5636] font-medium text-sm hover:underline">About</a>
+            <a href="#renters" class="text-[#3d5636] font-medium text-sm hover:underline">Renters</a>
+            <a href="#rentees" class="text-[#3d5636] font-medium text-sm hover:underline">Rentees</a>
         </nav>
     </div>
 
-    <div class="w-full min-h-screen flex flex-col items-center justify-center px-2 sm:px-4 sm:mx-0">
+    <div class="w-full min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 sm:mx-0 my-16">
         <div class="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-between px-2 sm:px-6 py-8 sm:py-12 mx-2 sm:mx-0">
             <!-- Left Section -->
-            <div class="w-full md:w-1/2 flex flex-col items-start">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 sm:mb-4">
-                    <span class="font-serif text-[#3d5636] italic">Retasify</span>
+            <div class="w-full md:w-1/2 flex flex-col items-start" >
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 sm:mb-4" >
+                    <span class="font-serif text-[#3d5636] italic" id="home">Retasify</span>
                     <span class="font-semibold text-[#3d5636]"> is</span>
                     <br>
                     <span class="font-bold text-[#3d5636]">launching soon</span>
@@ -61,7 +61,7 @@
                         type="email"
                         placeholder="Your Email"
                         class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#eab543] bg-white"
-                    />
+                        id="user-email"/>
                     <button
                         type="submit"
                         class="px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg rounded-r-md bg-[#eab543] text-white font-medium hover:bg-[#d4a13a] transition"
@@ -72,7 +72,7 @@
             </div>
             <!-- Right Section (Illustration Placeholder) -->
             <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl flex items-center justify-center">
+                <div class="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl flex items-center justify-center" id="about">
                     <img src="/retasify/images/index-img.png" alt="Retasify Illustration" class="w-full h-auto max-h-[320px] sm:max-h-[400px] md:max-h-[500px] object-contain" />
                 </div>
             </div>
@@ -80,7 +80,7 @@
         <!-- retasify card  -->
         <div class="w-full bg-[#3d5636] rounded-xl mt-8 sm:mt-12 px-2 sm:px-6 py-6 sm:py-10 flex flex-col items-center mx-5">
         <div class="max-w-4xl w-full">
-            <div class="text-center mb-4 sm:mb-6">
+            <div class="text-center mb-4 sm:mb-6" >
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-white mb-2">Why <span class="text-[#eab543]">Retasify</span>?</h2>
                 <p class="text-white text-sm sm:text-base md:text-lg">
                     Retasify makes it easy to rent, share, and upcycle clothing — from modern styles to Filipiniana pieces — while celebrating local craftsmanship and reducing fashion waste. Join us in building a more sustainable, circular fashion future.
@@ -153,19 +153,19 @@
                 </p>
             </div>
             <!-- Step 4 -->
-            <div class="flex flex-col items-center text-center">
+            <div class="flex flex-col items-center text-center" id="rentees">
                 <img src="/retasify/images/Money.png" alt="List & Earn" class="w-20 h-20 mb-4 object-contain" />
                 <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">04 List & Earn</h3>
                 <p class="text-gray-700 text-sm">
                     List your garments, set your rental terms, and start earning — while keeping fashion in motion.
                 </p>
-            </div>
+            </div >
         </div>
     </div>
     <!-- For Rentees Card Section -->
-    <div class="w-full max-w-6xl mx-0 mt-36 rounded-2xl overflow-hidden flex flex-col md:flex-row bg-[#3d5636] h-[340px] md:h-[340px]">
+    <div class="w-full max-w-6xl mx-0 mt-36 rounded-2xl overflow-hidden flex flex-col md:flex-row bg-[#3d5636] h-[340px] md:h-[340px]" >
         <!-- Left: Image -->
-        <div class="flex-1 min-h-0 relative flex items-end md:items-stretch bg-[#2e4630]">
+        <div class="flex-1 min-h-0 relative flex items-end md:items-stretch bg-[#2e4630]" >
             <img 
                 src="/retasify/images/rentee-image.png" 
                 alt="Woman in green" 
@@ -211,9 +211,9 @@
     </div>
 
     <!-- For Renters Card Section -->
-    <div class="w-full max-w-6xl mx-auto mt-12 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse bg-[#faf6ef] border border-[#3d5636] shadow-md h-[340px] md:h-[340px]">
+    <div class="w-full max-w-6xl mx-auto mt-12 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse bg-[#faf6ef] border border-[#3d5636] shadow-md h-[340px] md:h-[340px]" >
         <!-- Right: Image -->
-        <div class="flex-1 min-h-0 relative flex items-end md:items-stretch bg-[#eae6de]">
+        <div class="flex-1 min-h-0 relative flex items-end md:items-stretch bg-[#eae6de]"id="renters">
             <img 
                 src="/retasify/images/renter-image.png" 
                 alt="Person reading newspaper" 
