@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retasify Launching Soon</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="fetch-email.js"></script>
+    <!-- <script type="module" src="fetch-email.js"></script> -->
 </head>
 <body class="bg-[#faf6ef] min-h-screen  items-center justify-center">
     <!-- Header -->
@@ -56,19 +56,9 @@
                 </h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-[#3d5636] mt-4 sm:mt-6 mb-2 sm:mb-4">Circular, conscious fashion — proudly local.</p>
                 <p class="text-base sm:text-lg text-gray-700 mb-4 sm:mb-8">Ready to be part of the change? Join the waitlist now.</p>
-                <form class="flex w-full max-w-md">
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                        class="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#eab543] bg-white"
-                        id="user-email"/>
-                    <button
-                        type="submit"
-                        class="px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg rounded-r-md bg-[#eab543] text-white font-medium hover:bg-[#d4a13a] transition"
-                    >
-                        Join Waitlist
-                    </button>
-                </form>
+                <div id="getWaitlistContainer" data-waitlist_id="29574" data-widget_type="WIDGET_1"></div>
+                <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
+                <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
             </div>
             <!-- Right Section (Illustration Placeholder) -->
             <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
@@ -261,23 +251,9 @@
     <!-- Notification Card -->
     <div class="w-full flex flex-col items-center mt-16">
         <div class="bg-white border border-dashed border-[#3d5636] rounded-lg shadow-md px-6 py-8 max-w-xl w-full text-center">
-            <h2 class="text-2xl sm:text-3xl font-semibold text-[#3d5636] mb-2">Get Notified when we're Launching</h2>
-            <p class="text-[#3d5636] text-base sm:text-lg mb-1">Circular, conscious fashion — proudly local.</p>
-            <p class="text-gray-700 text-sm mb-4">Be part of the excitement.</p>
-            <form class="flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-md mx-auto">
-                <input
-                    type="email"
-                    placeholder="Your Email"
-                    class="flex-1 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#eab543] bg-white text-base"
-                    required
-                />
-                <button
-                    type="submit"
-                    class="px-4 py-2 rounded-md bg-[#eab543] text-white font-medium hover:bg-[#d4a13a] transition w-full sm:w-auto"
-                >
-                    Join Waitlist
-                </button>
-            </form>
+            <div id="getWaitlistContainer" data-waitlist_id="29574" data-widget_type="WIDGET_1"></div>
+            <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
+            <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
         </div>
     </div>
     <!-- Footer -->
