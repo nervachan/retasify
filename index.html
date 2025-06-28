@@ -29,21 +29,69 @@
                 <a href="#" class="bg-[#eab543] hover:bg-[#d4a13a] text-[#3d5636] font-semibold text-sm px-4 py-2 rounded-3xl shadow transition">Contact Us</a>
             </div>
             <!-- Mobile menu button -->
-            <button class="md:hidden ml-2 p-2 rounded hover:bg-[#eab543]/20 focus:outline-none" aria-label="Open Menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button id="mobile-menu-btn" class="md:hidden ml-2 p-2 rounded hover:bg-[#eab543]/20 focus:outline-none" aria-label="Open Menu">
                 <svg class="w-6 h-6 text-[#3d5636]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
         </div>
     </header>
-    <!-- Mobile Nav -->
-    <div id="mobile-menu" class="md:hidden hidden bg-[#ededed] px-4 py-3 rounded-b-xl shadow-sm  fixed top-16 left-0 w-full z-50" data-aos="fade-down">
-        <nav class="flex flex-col space-y-2">
-            <a href="#home" class="text-[#3d5636] font-medium text-sm hover:bg-[#3d5636] hover:text-white px-3 py-2 rounded transition-colors duration-200">Home</a>
-            <a href="#about" class="text-[#3d5636] font-medium text-sm hover:bg-[#3d5636] hover:text-white px-3 py-2 rounded transition-colors duration-200">About</a>
-            <a href="#renters" class="text-[#3d5636] font-medium text-sm hover:bg-[#3d5636] hover:text-white px-3 py-2 rounded transition-colors duration-200">Renters</a>
-            <a href="#rentees" class="text-[#3d5636] font-medium text-sm hover:bg-[#3d5636] hover:text-white px-3 py-2 rounded transition-colors duration-200">Rentees</a>
-        </nav>
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+        <!-- Backdrop -->
+        <div id="sidebar-backdrop" class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <!-- Sidebar -->
+        <div class="relative w-80 h-full bg-white shadow-lg ml-auto">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-200">
+                <button id="close-sidebar" class="p-2 rounded hover:bg-gray-100 focus:outline-none">
+                    <svg class="w-6 h-6 text-[#3d5636]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                <div class="flex items-center">
+                    <img src="./images/logo.png" alt="Retasify Logo" class="w-12 h-12 object-contain">
+                </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="p-4">
+                <div class="space-y-4">
+                    <a href="#home" class="mobile-nav-link flex items-center text-[#3d5636] font-medium text-base hover:bg-[#3d5636] hover:text-white px-4 py-3 rounded-lg transition-colors duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        Home
+                    </a>
+                    <a href="#about" class="mobile-nav-link flex items-center text-[#3d5636] font-medium text-base hover:bg-[#3d5636] hover:text-white px-4 py-3 rounded-lg transition-colors duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        About
+                    </a>
+                    <a href="#rentees" class="mobile-nav-link flex items-center text-[#3d5636] font-medium text-base hover:bg-[#3d5636] hover:text-white px-4 py-3 rounded-lg transition-colors duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        Rentees
+                    </a>
+                    <a href="#renters" class="mobile-nav-link flex items-center text-[#3d5636] font-medium text-base hover:bg-[#3d5636] hover:text-white px-4 py-3 rounded-lg transition-colors duration-200">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                        </svg>
+                        Renters
+                    </a>
+                </div>
+                <!-- Contact Section -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <a href="#" class="flex items-center justify-center bg-[#eab543] hover:bg-[#d4a13a] text-[#3d5636] font-semibold text-base px-4 py-3 rounded-lg shadow transition">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Contact Us
+                    </a>
+                </div>
+            </nav>
+        </div>
     </div>
 
     <div class="w-full min-h-screen flex flex-col items-center justify-center px-3 sm:px-4 sm:mx-0 my-32 " data-aos="fade-up">
@@ -115,206 +163,270 @@
                 </div>
             </div>
         </div>
-    <!-- How Retasify Works Section -->
-    <div class="w-full max-w-6xl mx-auto mt-10 sm:mt-16 px-2 sm:px-6" data-aos="fade-up">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-[#3d5636] text-center mb-8">
-            How <span class="text-[#eab543]">Retasify</span> Works
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <!-- Step 1 -->
-            <div class="flex flex-col items-center text-center">
-                <img src="./images/Device.png" alt="Browse & Book" class="w-20 h-20 mb-4 object-contain" />
-                <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">01 Browse & Book</h3>
-                <p class="text-gray-700 text-sm">
-                    Explore our curated selection of stylish garments. Choose your item, select rental dates, and book it with ease.
-                </p>
+        <!-- How Retasify Works Section -->
+        <div id="about" class="w-full max-w-6xl mx-auto mt-10 sm:mt-16 px-2 sm:px-6" data-aos="fade-up">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-[#3d5636] text-center mb-8">
+                How <span class="text-[#eab543]">Retasify</span> Works
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="./images/Device.png" alt="Browse & Book" class="w-20 h-20 mb-4 object-contain" />
+                    <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">01 Browse & Book</h3>
+                    <p class="text-gray-700 text-sm">
+                        Explore our curated selection of stylish garments. Choose your item, select rental dates, and book it with ease.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="./images/Location.png" alt="Choose Drop-off" class="w-20 h-20 mb-4 object-contain" />
+                    <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">02 Choose Drop-off</h3>
+                    <p class="text-gray-700 text-sm">
+                        Pick a nearby location that works for you — from partner hubs to community spaces. Convenient, local, and easy to access.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="./images/Browse.png" alt="Wear & Return" class="w-20 h-20 mb-4 object-contain" />
+                    <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">03 Wear & Return</h3>
+                    <p class="text-gray-700 text-sm">
+                        Enjoy your look for events or everyday moments. Then simply drop it off — we’ll take care of the rest.
+                    </p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="./images/Money.png" alt="List & Earn" class="w-20 h-20 mb-4 object-contain" />
+                    <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">04 List & Earn</h3>
+                    <p class="text-gray-700 text-sm">
+                        List your garments, set your rental terms, and start earning — while keeping fashion in motion.
+                    </p>
+                </div >
             </div>
-            <!-- Step 2 -->
-            <div class="flex flex-col items-center text-center">
-                <img src="./images/Location.png" alt="Choose Drop-off" class="w-20 h-20 mb-4 object-contain" />
-                <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">02 Choose Drop-off</h3>
-                <p class="text-gray-700 text-sm">
-                    Pick a nearby location that works for you — from partner hubs to community spaces. Convenient, local, and easy to access.
-                </p>
-            </div>
-            <!-- Step 3 -->
-            <div class="flex flex-col items-center text-center">
-                <img src="./images/Browse.png" alt="Wear & Return" class="w-20 h-20 mb-4 object-contain" />
-                <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">03 Wear & Return</h3>
-                <p class="text-gray-700 text-sm">
-                    Enjoy your look for events or everyday moments. Then simply drop it off — we’ll take care of the rest.
-                </p>
-            </div>
-            <!-- Step 4 -->
-            <div class="flex flex-col items-center text-center">
-                <img src="./images/Money.png" alt="List & Earn" class="w-20 h-20 mb-4 object-contain" />
-                <h3 class="text-[#7e8d7a] font-bold text-lg mb-1">04 List & Earn</h3>
-                <p class="text-gray-700 text-sm">
-                    List your garments, set your rental terms, and start earning — while keeping fashion in motion.
-                </p>
-            </div >
         </div>
-    </div>
-    <!-- For Rentees Card Section -->
-    <div id="rentees" class="w-full max-w-6xl mx-0 mt-24 sm:mt-36 rounded-2xl overflow-hidden flex flex-col md:flex-row bg-[#3d5636] h-auto md:h-[720px] mb-12" data-aos="fade-up">
-        <!-- Left: Image -->
-        <div class="flex-1 min-h-[180px] sm:min-h-0 relative flex items-end md:items-stretch bg-[#2e4630]">
-            <img 
-                src="./images/rentee-image.png" 
-                alt="Woman in green" 
-                class="w-full h-48 sm:h-56 md:h-full object-cover object-center rounded-b-2xl md:rounded-none md:rounded-l-2xl md:rounded-br-none transition-all duration-300"
-            />
-        </div>
-        <!-- Right: Text Content -->
-        <div class="flex-1 p-3 sm:p-4 md:p-20 flex flex-col justify-center">
-            <div class="mb-10">
-                <span class="inline-block bg-transparent px-3 py-1 font-serif italic text-white text-xl sm:text-6xl">For Rentees</span>
+        <!-- For Rentees Card Section -->
+        <div id="rentees" class="w-full max-w-6xl mx-0 mt-24 sm:mt-36 rounded-2xl overflow-hidden flex flex-col md:flex-row bg-[#3d5636] h-auto md:h-[720px] mb-12" data-aos="fade-up">
+            <!-- Left: Image -->
+            <div class="flex-1 min-h-[180px] sm:min-h-0 relative flex items-end md:items-stretch bg-[#2e4630]">
+                <img 
+                    src="./images/rentee-image.png" 
+                    alt="Woman in green" 
+                    class="w-full h-48 sm:h-56 md:h-full object-cover object-center rounded-b-2xl md:rounded-none md:rounded-l-2xl md:rounded-br-none transition-all duration-300"
+                />
             </div>
-            <ul class="space-y-3">
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="font-bold text-[#eab543] text-lg sm:text-xl">Access Stylish, Quality Wear</span>
-                        <p class="text-white text-base sm:text-lg mt-1">Discover a wardrobe that's fresh, versatile, and affordable. From trendy everyday outfits to rare Filipiniana pieces, enjoy premium fashion without the commitment or high cost.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="font-bold text-[#eab543] text-lg sm:text-xl">Dress for the Moment</span>
-                        <p class="text-white text-base sm:text-lg mt-1">Whether it's a wedding, photoshoot, or formal event, rent the perfect piece just when you need it. No storage worries, no last-minute shopping—just wear, enjoy, and return with ease.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="font-bold text-[#eab543] text-lg sm:text-xl">A Mindful Choice</span>
-                        <p class="text-white text-base sm:text-lg mt-1">Join a movement that values purpose over excess. By renting instead of buying new, you reduce fashion waste and support a more thoughtful, circular lifestyle.</p>
-                    </div>
-                </li>
-            </ul>
+            <!-- Right: Text Content -->
+            <div class="flex-1 p-3 sm:p-4 md:p-20 flex flex-col justify-center">
+                <div class="mb-10">
+                    <span class="inline-block bg-transparent px-3 py-1 font-serif italic text-white text-xl sm:text-6xl">For Rentees</span>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="font-bold text-[#eab543] text-lg sm:text-xl">Access Stylish, Quality Wear</span>
+                            <p class="text-white text-base sm:text-lg mt-1">Discover a wardrobe that's fresh, versatile, and affordable. From trendy everyday outfits to rare Filipiniana pieces, enjoy premium fashion without the commitment or high cost.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="font-bold text-[#eab543] text-lg sm:text-xl">Dress for the Moment</span>
+                            <p class="text-white text-base sm:text-lg mt-1">Whether it's a wedding, photoshoot, or formal event, rent the perfect piece just when you need it. No storage worries, no last-minute shopping—just wear, enjoy, and return with ease.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#eab543] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="font-bold text-[#eab543] text-lg sm:text-xl">A Mindful Choice</span>
+                            <p class="text-white text-base sm:text-lg mt-1">Join a movement that values purpose over excess. By renting instead of buying new, you reduce fashion waste and support a more thoughtful, circular lifestyle.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- For Renters Card Section -->
-    <div id="renters" class="w-full max-w-6xl mx-auto mt-8 sm:mt-12 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse bg-[#faf6ef] border border-[#FAF1DD] shadow-md h-auto md:h-[720px] border border-gray-200" data-aos="fade-up">
-        <!-- Right: Image -->
-        <div class="flex-1 min-h-[180px] sm:min-h-0 relative flex items-end md:items-stretch bg-[#eae6de]">
-            <img 
-                src="./images/renter-image.png" 
-                alt="Person reading newspaper" 
-                class="w-full h-48 sm:h-56 md:h-full object-cover object-center rounded-b-2xl md:rounded-none md:rounded-r-2xl md:rounded-bl-none transition-all duration-300"
-            />
-        </div>
-        <!-- Left: Text Content -->
-        <div class="flex-1 p-3 sm:p-4 md:p-6 flex flex-col justify-center sm:mx-8">
-            <div class="mb-10">
-                <span class="inline-block bg-transparent px-3 py-1 font-serif italic text-[#3d5636] text-lg sm:text-6xl">For Renters</span>
+        <!-- For Renters Card Section -->
+        <div id="renters" class="w-full max-w-6xl mx-auto mt-8 sm:mt-12 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse bg-[#faf6ef] border border-[#FAF1DD] shadow-md h-auto md:h-[720px] border border-gray-200" data-aos="fade-up">
+            <!-- Right: Image -->
+            <div class="flex-1 min-h-[180px] sm:min-h-0 relative flex items-end md:items-stretch bg-[#eae6de]">
+                <img 
+                    src="./images/renter-image.png" 
+                    alt="Person reading newspaper" 
+                    class="w-full h-48 sm:h-56 md:h-full object-cover object-center rounded-b-2xl md:rounded-none md:rounded-r-2xl md:rounded-bl-none transition-all duration-300"
+                />
             </div>
-            <ul class="space-y-3">
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Earn with Purpose</span>
-                        <p class="text-black text-base sm:text-lg mt-1">Monetize your existing inventory by listing pre-loved or custom wear. Generate a steady income stream while reaching a growing market of conscious consumers.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Extend Your Garments’ Story</span>
-                        <p class="text-black text-base sm:text-lg mt-1">Breathe new life into your collection. Let your pieces be part of meaningful moments for others—from rentals to everyday expression.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
-                    </svg>
-                    <div>
-                        <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Grow with a Circular Community</span>
-                        <p class="text-black text-base sm:text-lg mt-1">Join a movement that collaborates sustainably, boosts creativity, and shares value. Retasify connects you with changemakers who care about style, culture, and impact.</p>
-                    </div>
-                </li>
-            </ul>
+            <!-- Left: Text Content -->
+            <div class="flex-1 p-3 sm:p-4 md:p-6 flex flex-col justify-center sm:mx-8">
+                <div class="mb-10">
+                    <span class="inline-block bg-transparent px-3 py-1 font-serif italic text-[#3d5636] text-lg sm:text-6xl">For Renters</span>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Earn with Purpose</span>
+                            <p class="text-black text-base sm:text-lg mt-1">Monetize your existing inventory by listing pre-loved or custom wear. Generate a steady income stream while reaching a growing market of conscious consumers.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Extend Your Garments’ Story</span>
+                            <p class="text-black text-base sm:text-lg mt-1">Breathe new life into your collection. Let your pieces be part of meaningful moments for others—from rentals to everyday expression.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-[#3d5636] flex-shrink-0 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z"/>
+                        </svg>
+                        <div>
+                            <span class="text-black font-bold text-[#eab543] text-lg sm:text-xl">Grow with a Circular Community</span>
+                            <p class="text-black text-base sm:text-lg mt-1">Join a movement that collaborates sustainably, boosts creativity, and shares value. Retasify connects you with changemakers who care about style, culture, and impact.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- Notification Card -->
-    <div class="w-full flex flex-col items-center mt-12 sm:mt-16 px-2" data-aos="fade-up">
-        <h1 class="w-full max-w-2xl mx-auto bg-transparent px-3 py-1 text-[#3d5636] text-3xl font-bold sm:text-5xl text-center">
-            Be part of the excitement
-        </h1>
-        <div class="w-full max-w-md px-2 sm:px-6 py-6 sm:py-8 text-center">
-            <div id="getWaitlistContainer" data-waitlist_id="29574" data-widget_type="WIDGET_1"></div>
-            <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
-            <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
+        <!-- Notification Card -->
+        <div class="w-full flex flex-col items-center mt-12 sm:mt-16 px-2" data-aos="fade-up">
+            <h1 class="w-full max-w-2xl mx-auto bg-transparent px-3 py-1 text-[#3d5636] text-3xl font-bold sm:text-5xl text-center">
+                Be part of the excitement
+            </h1>
+            <div class="w-full max-w-md px-2 sm:px-6 py-6 sm:py-8 text-center">
+                <div id="getWaitlistContainer" data-waitlist_id="29574" data-widget_type="WIDGET_1"></div>
+                <link rel="stylesheet" type="text/css" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"/>
+                <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"></script>
+            </div>
         </div>
-    </div>
-    <!-- Footer -->
-    <footer class="w-full flex justify-center mt-8 sm:mt-10 mb-4" data-aos="fade-up">
-        <p class="text-xs text-gray-500 text-center">&copy; 2024 Retasify. All rights reserved.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="w-full flex justify-center mt-8 sm:mt-10 mb-4" data-aos="fade-up">
+            <p class="text-xs text-gray-500 text-center">&copy; 2024 Retasify. All rights reserved.</p>
+        </footer>
     </div>
     <script>
       AOS.init();
       
-      // Active navigation functionality
+      // Mobile sidebar functionality
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileSidebar = document.getElementById('mobile-sidebar');
+      const closeSidebar = document.getElementById('close-sidebar');
+      const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+      
+      function openSidebar() {
+        mobileSidebar.classList.remove('translate-x-full');
+        mobileSidebar.classList.add('translate-x-0');
+        document.body.classList.add('overflow-hidden');
+      }
+      
+      function closeSidebarFunc() {
+        mobileSidebar.classList.add('translate-x-full');
+        mobileSidebar.classList.remove('translate-x-0');
+        document.body.classList.remove('overflow-hidden');
+      }
+      
+      mobileMenuBtn.addEventListener('click', openSidebar);
+      closeSidebar.addEventListener('click', closeSidebarFunc);
+      sidebarBackdrop.addEventListener('click', closeSidebarFunc);
+      
+      // Close sidebar when clicking mobile nav links
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeSidebarFunc);
+      });
+      
+      // Active navigation functionality with improved section detection
       function setActiveNav() {
-        const sections = document.querySelectorAll('[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const sections = document.querySelectorAll('#home, #about, #rentees, #renters');
+        const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-nav-link');
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
         
-        let current = '';
+        let current = 'home'; // Default to home
+        let scrollPosition = window.scrollY + headerHeight + 50; // Account for header + some margin
         
+        // Find which section is currently most visible
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (window.scrollY >= (sectionTop - 200)) {
+          const sectionBottom = sectionTop + section.clientHeight;
+          
+          // Check if the scroll position is within this section
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             current = section.getAttribute('id');
           }
         });
         
+        // Handle edge case for the last section
+        const lastSection = sections[sections.length - 1];
+        if (lastSection && scrollPosition >= lastSection.offsetTop) {
+          current = lastSection.getAttribute('id');
+        }
+        
+        // Update navigation states
         navLinks.forEach(link => {
           // Remove active classes
           link.classList.remove('bg-[#3d5636]', 'text-white');
           link.classList.add('text-[#3d5636]');
           
           // Add active classes to current section
-          if (link.getAttribute('href') === `#${current}`) {
+          const linkHref = link.getAttribute('href');
+          if (linkHref === `#${current}`) {
             link.classList.add('bg-[#3d5636]', 'text-white');
             link.classList.remove('text-[#3d5636]');
           }
         });
       }
       
-      // Set active nav on scroll
-      window.addEventListener('scroll', setActiveNav);
+      // Set active nav on scroll with throttling for performance
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(setActiveNav, 10);
+      });
       
-      // Set active nav on page load
+      // Set active nav on page load and resize
       window.addEventListener('load', setActiveNav);
+      window.addEventListener('resize', setActiveNav);
       
-      // Handle nav link clicks
-      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      // Handle nav link clicks with improved offset calculation
+      document.querySelectorAll('nav a[href^="#"], .mobile-nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
           const targetId = this.getAttribute('href').substring(1);
           const targetElement = document.getElementById(targetId);
           
           if (targetElement) {
-            const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
+            // Calculate accurate offset
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 80;
+            
+            // Dynamic offset based on section and screen size
+            let additionalOffset = 20;
+            if (targetId === 'home') {
+              additionalOffset = window.innerWidth < 768 ? 20 : 30;
+            } else {
+              additionalOffset = window.innerWidth < 768 ? 15 : 25;
+            }
+            
+            const targetPosition = targetElement.offsetTop - (headerHeight + additionalOffset);
+            
             window.scrollTo({
-              top: offsetTop,
+              top: Math.max(0, targetPosition),
               behavior: 'smooth'
             });
+            
+            // Update active nav immediately for better UX
+            setTimeout(setActiveNav, 300);
           }
         });
       });
